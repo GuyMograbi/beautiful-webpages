@@ -1,0 +1,418 @@
+@import url(http://fonts.googleapis.com/css?family=Comfortaa);
+@import url(http://fonts.googleapis.com/css?family=Pompiere);
+@import url(http://fonts.googleapis.com/css?family=Playball);
+body {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  background-color: #757367; }
+
+h1 {
+  font-family: 'Comfortaa', cursive; }
+
+p {
+  margin: 0px 0px 10px 0px;
+  font-family: 'Pompiere', cursive; }
+
+@-moz-keyframes animate_background {
+  0% {
+    background-position: 0 -30px; }
+
+  100% {
+    background-position: 2000px -30px; } }
+
+@-ms-keyframes animate_background {
+  0% {
+    background-position: 0 -30px; }
+
+  100% {
+    background-position: 2000px -30px; } }
+
+@-o-keyframes animate_background {
+  0% {
+    background-position: 0 -30px; }
+
+  100% {
+    background-position: 2000px -30px; } }
+
+@-webkit-keyframes animate_background {
+  0% {
+    background-position: 0 -30px; }
+
+  100% {
+    background-position: 2000px -30px; } }
+
+@keyframes animate_background {
+  0% {
+    background-position: 0 -30px; }
+
+  100% {
+    background-position: 2000px -30px; } }
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+
+  to {
+    -moz-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg); } }
+
+@-ms-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+
+  to {
+    -moz-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg); } }
+
+@-o-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+
+  to {
+    -moz-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg); } }
+
+@-webkit-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+
+  to {
+    -moz-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg); } }
+
+@keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+
+  to {
+    -moz-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg); } }
+
+@-moz-keyframes ride_bike {
+  0% {
+    right: -400px; }
+
+  10% {
+    right: 60px; }
+
+  80% {
+    right: 60px;
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+
+  85% {
+    right: 200px;
+    -moz-transform: rotate(60deg);
+    -o-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg); }
+
+  90% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+
+  100% {
+    right: 1400px; } }
+
+@-ms-keyframes ride_bike {
+  0% {
+    right: -400px; }
+
+  10% {
+    right: 60px; }
+
+  80% {
+    right: 60px;
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+
+  85% {
+    right: 200px;
+    -moz-transform: rotate(60deg);
+    -o-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg); }
+
+  90% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+
+  100% {
+    right: 1400px; } }
+
+@-o-keyframes ride_bike {
+  0% {
+    right: -400px; }
+
+  10% {
+    right: 60px; }
+
+  80% {
+    right: 60px;
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+
+  85% {
+    right: 200px;
+    -moz-transform: rotate(60deg);
+    -o-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg); }
+
+  90% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+
+  100% {
+    right: 1400px; } }
+
+@-webkit-keyframes ride_bike {
+  0% {
+    right: -400px; }
+
+  10% {
+    right: 60px; }
+
+  80% {
+    right: 60px;
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+
+  85% {
+    right: 200px;
+    -moz-transform: rotate(60deg);
+    -o-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg); }
+
+  90% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+
+  100% {
+    right: 1400px; } }
+
+@keyframes ride_bike {
+  0% {
+    right: -400px; }
+
+  10% {
+    right: 60px; }
+
+  80% {
+    right: 60px;
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+
+  85% {
+    right: 200px;
+    -moz-transform: rotate(60deg);
+    -o-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg); }
+
+  90% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+
+  100% {
+    right: 1400px; } }
+
+.background1 {
+  z-index: 2;
+  top: 140px;
+  background: url("buildings.png");
+  -webkit-animation: animate_background 50s linear;
+  -moz-animation: animate_background 50s linear;
+  -ms-animation: animate_background 50s linear;
+  -o-animation: animate_background 50s linear;
+  animation: animate_background 50s linear; }
+
+.background2 {
+  z-index: 1;
+  background: url("city.png");
+  top: 0;
+  -webkit-animation: animate_background 90s linear;
+  -moz-animation: animate_background 90s linear;
+  -ms-animation: animate_background 90s linear;
+  -o-animation: animate_background 90s linear;
+  animation: animate_background 90s linear; }
+
+.background3 {
+  z-index: 6;
+  top: 540px;
+  background: url("flowerbed.png");
+  -webkit-animation: animate_background 20s linear;
+  -moz-animation: animate_background 20s linear;
+  -ms-animation: animate_background 20s linear;
+  -o-animation: animate_background 20s linear;
+  animation: animate_background 20s linear; }
+
+.biker-wrapper {
+  z-index: 7;
+  float: right;
+  top: 265px;
+  position: fixed;
+  -webkit-animation: ride_bike 30s linear;
+  -moz-animation: ride_bike 30s linear;
+  -ms-animation: ride_bike 30s linear;
+  -o-animation: ride_bike 30s linear;
+  animation: ride_bike 30s linear;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite; }
+  .biker-wrapper .biker {
+    height: 300px;
+    width: 300px;
+    background: url("biker.png") no-repeat; }
+    .biker-wrapper .biker .wheel {
+      -webkit-animation: spin 5s linear;
+      -moz-animation: spin 5s linear;
+      -ms-animation: spin 5s linear;
+      -o-animation: spin 5s linear;
+      animation: spin 5s linear;
+      -webkit-animation-iteration-count: infinite;
+      -moz-animation-iteration-count: infinite;
+      -ms-animation-iteration-count: infinite;
+      -o-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      height: 80px;
+      width: 90px;
+      margin-top: 207px; }
+      .biker-wrapper .biker .wheel.left {
+        float: left;
+        background: url("wheel_left.png") no-repeat;
+        margin-left: 7px; }
+      .biker-wrapper .biker .wheel.right {
+        margin-right: 63px;
+        float: right;
+        background: url("wheel_right.png") no-repeat; }
+
+.background1, .background2, .background3 {
+  position: fixed;
+  margin: 0px auto 0px auto !important;
+  padding: 0px 0px 0px 0px;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  min-height: 100% !important;
+  background-repeat: repeat-x;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  opacity: 1.00;
+  filter: alpha(opacity=100); }
+
+.foreground2 {
+  z-index: 5;
+  position: relative; }
+  .foreground2 .title {
+    padding-left: 20px;
+    padding-top: 20px;
+    font-family: 'Playball', cursive;
+    font-size: 150px; }
+  .foreground2 .shadow {
+    color: blue;
+    text-shadow: 0 2px 0 #0000eb, 0 4px 0 #0000e0, 0 6px 0 #0000d6, 0 8px 0 #0000cc, 3px 8px 15px rgba(0, 0, 0, 0.1), 3px 8px 5px rgba(0, 0, 0, 0.3);
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out; }
+  .foreground2 .shadow:hover {
+    top: -3px;
+    left: -3px;
+    color: green;
+    text-shadow: 0 2px 0 #006c00, 0 4px 0 #006100, 0 6px 0 #005700, 0 8px 0 #004d00, 0 10px 0 #004300, 0 12px 0 #003900, 0 14px 0 #002e00, 0 16px 0 #002400, 3px 8px 15px rgba(0, 0, 0, 0.1), 3px 8px 5px rgba(0, 0, 0, 0.3); }
+
+.foreground {
+  width: 980px;
+  margin: 120px auto 120px auto;
+  padding: 20px 20px 20px 20px;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  -moz-border-radius: 18px;
+  -webkit-border-radius: 18px;
+  border-radius: 18px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: #FFFFFF;
+  position: relative;
+  z-index: 5; }

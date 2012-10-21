@@ -1,0 +1,1 @@
+sass --watch panorama.scss:panorama.css
