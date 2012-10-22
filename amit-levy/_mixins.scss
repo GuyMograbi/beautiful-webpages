@@ -206,6 +206,15 @@ $useIEFilters: 0;
 
 }
 
-
+@mixin threedshadow($color, $depth) {
+  color: $color;
+  $all: ();
+  @for $i from 1 through $depth {
+    $all: append($all, append($i*1px $i*1px 0, darken($color, $i+14%)), comma);
+  $all: append($all, 3px 8px 15px rgba(0,0,0,.1), comma);
+  $all: append($all, 3px 8px 5px rgba(0,0,0,.3));
+  text-shadow: $all
+  }
+} 
 
 // ==== /CSS3 SASS MIXINS ====
