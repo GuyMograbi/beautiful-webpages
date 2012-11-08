@@ -1,0 +1,62 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+	<meta name="author" content="https://plus.google.com/114132575051963212041" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> 
+	<title>Amit Levy's Site</title>
+    <link href="panorama.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<div class="wrapper">
+<div class="page front-copy page3" > Page3 </div>
+<div class="page page3" > Page3 </div>
+<div class="page back-copy page3" > Page3 </div>
+<div class="page front-copy page2" > Page2 </div>
+<div class="page page2" > Page2 </div>
+<div class="page back-copy copy page2" > Page2 </div>
+<div class="page front-copy page1" > Page1 </div>
+<div class="page page1" > Page1 </div>
+
+</div>
+
+<p><small>&copy;2012 <a href="https://plus.google.com/114132575051963212041">Guy Mograbi</a></small></p>
+
+<!-- Guy - 
+
+The next problem I need to resolve is when I flip, 
+there is a state where I need to show page1 on the right, and page2 on the left. 
+
+What I want to do is use "width" and "scrollLeft"(?)  
+
+
+                                   /|
+                                  / |                                   
++--------------------------------/--|----------------------------------+
+|                               |   |                                  |
+|                               |   |                                  |
+|                               |   |                                  |
+|           Page2               |   /           Page1                  |
+|                               |  /                                   |
+|                               | /                                    |
+|                               |/                                     |
++----------------------------------------------------------------------+
+
+
+More notes : 
+
+It is best I use "zIndex" to keep track on which page I am showing. 
+the visible page should be zIndex 2, and the rest 0. 
+With Javascript, once I decide which is the next/prev page I am showing, I should give them z-index 1
+and when animation stops, I need to sort the zIndex again. 
+I can use "http://stackoverflow.com/questions/7134584/how-do-i-use-transitionend-in-jquery" ( transitionend ) event 
+to do that. 
+
+-->
+<button onclick="$('.page1.front-copy, .page2.back-copy').toggleClass('flip');">Flip</button>
+</body>
+</html>
