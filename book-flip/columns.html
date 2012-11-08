@@ -1,0 +1,188 @@
+
+
+
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<style>
+
+.pagination-column-widget{
+	display:table-row;
+}
+.pagination-column{
+	overflow:hidden;
+	display:inline-block;
+	background:pink;
+	margin-left:10px;
+	padding:10px;
+	border-radius:5px;
+	
+}
+</style>
+</head>
+<body>
+
+<script>
+
+(function( $ ) {
+
+	function totalHeight( p ){
+		return $(p)[0].scrollHeight - ( $(p).outerHeight() - $(p).height() );
+	}
+
+	$.fn.scrollBottom = function(){
+		var $this = this;
+		console.log(["enableDisable",$this.scrollTop(), $this.height(), totalHeight($this)]);
+		return $this.scrollTop() + $this.height() >= totalHeight($this);
+	}
+
+	
+	function enableDisableButtons( $firstColumn, $lastColumn ){
+		if ( $lastColumn.scrollBottom() || $firstColumn.scrollBottom()){
+				$(".prev-page").attr("disabled",null);
+				$(".next-page").attr("disabled","disabled");
+		}
+			
+		else if ( $firstColumn.scrollTop()  == 0){
+				$(".next-page").attr("disabled",null);
+				$(".prev-page").attr("disabled","disabled");
+		}
+		else{
+				$(".next-page").attr("disabled",null);
+				$(".prev-page").attr("disabled",null);
+		}
+	
+	}
+	
+	
+	function changeText( section, toVisible ) { 
+		$(section).css({opacity: ( toVisible ? 0 : 1.0  ), visibility: "visible"}).animate({opacity: ( toVisible ? 1.0 : 0 ) }, 400, function(){
+			if ( !toVisible ) { changeText(section,true) } 
+		});
+	}
+	
+	function showText(){
+		changeText(true);
+	}
+	
+	function hideText(){
+		changeText(false);
+	}
+	
+	hideText();		
+
+  $.fn.paginate = function( options ) {
+		this.options = $.extend ({ columns:2, // number of columns
+								gap:10,  // size of gap
+								height:450,  // height of each column
+								width: 400
+								}, options);
+	// columnNum = the number of columns we have in the widget (total).
+	
+	this.scrollToHeight = function ( section , newScrollTop ){
+		var $section = $(section);
+		var $scrollTop = $section.scrollTop();
+
+		console.log(["scrolling", $section.attr("class"), $scrollTop, newScrollTop])
+		
+
+		if ( totalHeight($section) - newScrollTop < $section.height() ){
+			$section.height( totalHeight($section) - newScrollTop );
+		}else{
+			$section.height(this.options.height);
+		}
+		
+		console.log(["new height",$section.height()])
+		$section.scrollTop( newScrollTop );
+	
+	}
+	this.scroll = function( section, direction ){
+		
+		var $scrollTop = $(section).scrollTop();
+		changeText( section, false ); // will hide and show
+		this.scrollToHeight( section, $scrollTop + (  $(section).height()  * direction * this.options.columns) );
+	}																			
+        this.initialize = function(){
+			var options = this.options;
+			$(this).addClass("pagination-column-widget");
+			var $content = $(this).find(".content");
+			var $html = $content.html();
+			$content.html(""); // remove everything!
+			for ( var i =0; i < options.columns; i++ ){
+				var $currentDiv = $("<div></div>").addClass(" pagination-column column-" + i).html($html).css({"height":options.height, "width":options.width});
+				$content.append( $currentDiv );
+				this.scrollToHeight( $currentDiv, this.options.height * i);
+			}
+			
+			var me = this;
+			var allDivs = $(this).find(".pagination-column");
+			var firstDiv = $(this).find(".pagination-column:first");
+			var lastDiv = $(this).find(".pagination-column:last");
+			$(this).find("button").click(function(){ 
+					var button = this;
+					$.each( allDivs, function(index,item){
+							me.scroll( item, $(button).hasClass("next-page") ? 1 : -1 );
+					});
+					
+					enableDisableButtons( firstDiv, lastDiv );
+			});
+			
+			
+		}																							
+		
+		this.initialize();	
+		return this;
+		
+
+  };
+})( jQuery );
+
+
+ $(function(){
+	$(".my-div").paginate();
+	
+ });
+</script>
+
+
+<div class="my-div">
+	<p class="content">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pretium commodo porta. In eu justo mi, vitae luctus neque. Suspendisse egestas molestie sem, ac rhoncus quam pretium a. Aliquam ut risus nulla. Integer eu auctor augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus risus lacus, pretium nec pellentesque a, egestas in ante. Praesent suscipit, nisi in egestas faucibus, nibh nibh hendrerit nunc, quis imperdiet magna orci eget turpis. Morbi porta porta justo sed cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id leo et dui elementum consequat vel vel risus. Phasellus ac ligula eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Donec nulla leo, bibendum et pellentesque sed, malesuada sit amet ante. Etiam et lectus ut ante mattis tristique sed in magna. In hac habitasse platea dictumst. Quisque et orci a tellus suscipit luctus eget at ante. Nulla hendrerit bibendum sapien ac pulvinar. Maecenas eu eros metus, eu sollicitudin dolor. Donec eu tincidunt neque. Duis tincidunt, metus ut eleifend auctor, est libero rhoncus tortor, in luctus nibh arcu vel risus. Ut nec diam at ipsum elementum gravida.
+
+Sed et nisi et nulla aliquet sodales eget et dui. Maecenas consequat, diam eget aliquam mollis, nulla est consequat nisl, eu luctus turpis tellus sed erat. Sed vestibulum posuere tincidunt. Nam laoreet pulvinar nulla ut feugiat. Etiam at lectus vitae est egestas posuere nec vel tellus. In aliquet purus tortor. Pellentesque eu sapien odio, nec tincidunt mauris. Nunc fringilla, leo eget sagittis euismod, mauris mi auctor ante, nec sagittis nulla neque vel arcu. Curabitur faucibus dolor sit amet ipsum suscipit ut euismod magna dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed augue tellus, at sodales massa. Sed condimentum tortor quis ipsum blandit a volutpat erat vehicula. In auctor faucibus lorem, laoreet vehicula odio tristique imperdiet.
+
+Ut sed magna sem, non vestibulum erat. Vivamus a sem lorem. Maecenas nisi risus, mollis et dignissim et, ornare non erat. Sed massa metus, convallis eget faucibus in, porta at eros. Nam vitae libero sem. Donec nec enim at turpis molestie venenatis eu non massa. Fusce mi lacus, rhoncus nec lacinia sit amet, imperdiet et leo. Cras interdum velit at est cursus vitae molestie sem vestibulum. Aenean pellentesque sodales orci vitae viverra. Aenean turpis purus, elementum at venenatis nec, commodo vel erat.
+
+Donec id nisi at nibh vestibulum luctus ac ac felis. Cras varius, lorem ut dapibus pellentesque, erat nibh adipiscing libero, ut dapibus odio risus non dolor. Fusce ornare blandit lorem eu gravida. Sed et tincidunt enim. Phasellus ut commodo sem. In non quam ante. Suspendisse nibh lacus, aliquam a accumsan sit amet, fermentum ac elit. Nunc pellentesque diam id lorem pulvinar ut tincidunt nulla auctor. Nullam eu quam sapien, ac pulvinar dolor. Vivamus vitae neque metus. Nulla sem urna, pulvinar vel elementum a, fringilla quis dolor. In tortor massa, congue dictum mollis sed, feugiat nec enim.
+
+Mauris eu nisl ac ante mollis pretium in sit amet felis. Cras placerat ligula at tellus faucibus a pharetra metus accumsan. Donec sed ligula sit amet quam pulvinar pretium. Praesent in sem eget dolor accumsan auctor eu at neque. Pellentesque nibh diam, scelerisque vehicula feugiat et, sagittis a magna. Pellentesque vel gravida ante. Nunc massa sem, accumsan et fringilla ac, cursus a elit. Phasellus commodo, ante non molestie auctor, enim turpis viverra mauris, id convallis ante augue eu nunc.
+
+Cras hendrerit feugiat mattis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur eget diam dui. Nunc lobortis dapibus tortor, eleifend mattis enim tempus luctus. Aliquam tincidunt, nunc ac blandit lobortis, dui nulla imperdiet tellus, a cursus lacus neque feugiat turpis. Donec a arcu leo. Suspendisse potenti. Proin ut lectus orci, a rhoncus tortor. Praesent non tellus lacus.
+
+Quisque interdum, nulla id auctor eleifend, lacus massa cursus lorem, in porttitor augue nisi a urna. Duis tempus, leo vitae ullamcorper congue, ligula tellus adipiscing tortor, sit amet fringilla nunc augue a purus. In congue eros quis lorem hendrerit aliquet. Maecenas vel mauris orci. Nullam congue molestie ante, quis ultricies turpis pretium accumsan. Aliquam orci diam, bibendum eu vehicula quis, elementum in urna. Suspendisse tempor rutrum velit ut ullamcorper. Donec venenatis aliquet feugiat. Nunc accumsan semper nibh, ac fermentum nibh ornare vitae. Nulla ut lectus leo. Nam condimentum blandit nisi, ut bibendum nisl pretium eu. Maecenas erat ipsum, vehicula et rutrum id, egestas sed est. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sem ligula, suscipit ut iaculis sed, dignissim ac lacus. Proin tortor ligula, consequat quis pulvinar in, scelerisque tincidunt nunc. Curabitur turpis lorem, ultricies quis scelerisque in, tempus eget nibh.
+
+Nulla facilisi. Praesent posuere laoreet odio sit amet sagittis. Nunc vel magna eu diam dictum tristique. In metus massa, accumsan nec iaculis eu, sodales consequat dolor. Quisque blandit hendrerit leo eget sollicitudin. Cras condimentum, sapien non interdum pellentesque, ligula enim pulvinar tellus, et feugiat mauris justo vel nibh. Curabitur vehicula dolor sit amet lorem vehicula et posuere lacus ullamcorper. Suspendisse condimentum pulvinar imperdiet. Maecenas rutrum volutpat sapien, eget mattis magna eleifend non. Quisque placerat velit sed nisl tempus tempor. Integer aliquam rhoncus euismod. Aliquam erat volutpat. Aenean lectus ante, lobortis at porta at, tempor id leo.
+
+Ut porttitor aliquet mattis. Quisque ante tellus, faucibus non porta in, lacinia eget tortor. Vestibulum fermentum lectus et nulla malesuada laoreet. Quisque lacinia scelerisque ullamcorper. Nam dignissim fermentum magna, et tincidunt mi adipiscing eget. Morbi vestibulum aliquet tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla facilisi.
+
+Nam tempus nunc vel dui pharetra ornare. Maecenas augue tellus, posuere quis elementum sed, sollicitudin ac libero. Pellentesque sed cursus tortor. Fusce eget ipsum mauris. Vivamus ac lacus leo, aliquet euismod felis. Nam risus leo, adipiscing tincidunt feugiat vel, tempor sit amet massa. Donec fermentum, nunc non pharetra rhoncus, turpis tellus lacinia augue, eget viverra nunc tellus a orci.
+
+Integer varius leo vitae enim aliquet euismod. Aliquam ut malesuada ante. Nam laoreet metus condimentum odio gravida facilisis. Aenean nulla tortor, vestibulum vitae viverra vitae, elementum sed erat. Pellentesque odio lacus, faucibus vel iaculis at, ullamcorper pulvinar augue. Aenean rhoncus risus non dolor congue at pulvinar augue venenatis. Pellentesque nec risus id quam consectetur pulvinar. Aliquam rutrum velit eget arcu tincidunt a lacinia elit tempor. Nam congue rhoncus congue. Vivamus a neque vitae neque pellentesque consectetur ut ac velit. Sed sit amet elit euismod sapien vestibulum mollis vel at quam. Duis blandit vestibulum ligula, volutpat venenatis nisl convallis ac. Duis venenatis neque ut purus aliquet tincidunt.
+
+Nam rhoncus dui ut est fermentum vitae hendrerit ligula tristique. Curabitur sollicitudin sollicitudin ipsum, vitae adipiscing lacus consequat in. Donec aliquet quam id purus pretium non egestas purus congue. Donec mollis nibh et est hendrerit gravida. Pellentesque vitae ligula dui, quis vehicula turpis. Nulla facilisi. In egestas facilisis lectus in ornare. Sed pulvinar metus vitae lacus mollis sit amet tempor enim dapibus. Mauris elementum, eros vitae posuere rutrum, erat velit ullamcorper ante, quis rhoncus turpis sem non nulla. Nam sed nibh metus, vitae ullamcorper est. Nam dolor turpis, lobortis vitae sollicitudin eget, posuere ac dui. Quisque semper, elit ut dictum lacinia, ante mauris iaculis quam, id cursus eros dui nec augue. Ut eget quam eget augue porta tempor. Aenean eget faucibus elit. Mauris fermentum nisl vitae ligula adipiscing euismod. Suspendisse non ligula nunc.
+
+Pellentesque faucibus eleifend bibendum. Maecenas sollicitudin auctor turpis nec sagittis. Etiam elementum risus non libero venenatis hendrerit. Sed ac orci mauris, sed elementum arcu. Suspendisse tempus ipsum eros, tincidunt sollicitudin purus. Proin turpis diam, tincidunt id lacinia in, adipiscing a nulla. Pellentesque at tortor ligula. Nulla facilisi. Praesent vel lacus eget nunc commodo commodo. Cras ut nulla eros, in ultricies lectus. Mauris consectetur, nulla scelerisque pharetra volutpat, libero ligula aliquam orci, vitae feugiat lectus nibh et quam. Pellentesque vitae sodales nulla. Vivamus hendrerit enim vitae purus dictum et ultrices tellus convallis.
+
+Nunc a nunc dui. Curabitur quis turpis ut magna pellentesque fringilla. Fusce ullamcorper facilisis dolor id bibendum. Praesent a massa vitae odio semper semper. Proin purus lectus, vestibulum vel volutpat id, iaculis et leo. Ut consequat, massa in ullamcorper bibendum, enim erat tempus dolor, sit amet tempus magna neque et sem. Nulla ut lacus nulla. Cras nec odio ut massa bibendum luctus vel vitae lacus. Vivamus convallis aliquet facilisis. Donec luctus urna ac ligula imperdiet rutrum. Integer ipsum lectus, luctus quis cursus et, tincidunt nec enim. Donec pulvinar mi ac neque iaculis egestas. Vestibulum facilisis semper dui ut viverra. Quisque interdum varius justo vel ultricies. Donec sit amet lorem at lorem varius bibendum. Duis ultricies neque a enim eleifend eu tincidunt nulla egestas.
+</p>
+<div class="buttons">
+<button class="prev-page">prev page</button>
+<button class="next-page">next page</button>
+</div>
+</div><!-- end of my-div -->
+
+
+</body>
+</html>
