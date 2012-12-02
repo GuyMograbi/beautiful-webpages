@@ -1,0 +1,294 @@
+@import "_mixins.scss";
+$width :  450px;
+
+
+
+*:before, *:after{ content:""; }
+.left{ float:left; }
+.right { float:right; }
+
+
+body.loaded{
+	background-color:#CECECE;
+
+
+
+
+	.seam{
+		border: 1px dashed black;
+		width:95%;
+		height:90%;
+		border-radius:250px;
+		margin:auto;
+		margin-top:10px;
+		position:static;
+
+	}		
+
+	.dog-by-divs-container{
+		border: 2px solid black;
+		margin:auto;
+		border-radius:150px;
+		height:300px;
+		width:$width;
+		background-color:#565656;
+
+		.ear{
+			background-color:black;
+			height: 100px;
+			width:100px;
+			border-bottom-left-radius:50px;
+			border-bottom-right-radius:50px;
+			border-top-left-radius:25px;
+			border-top-right-radius:25px;
+			margin-top:-15px;
+
+			&.right{
+				border-top-right-radius:75px;
+				margin-right:  50px ;
+			}
+
+			&.left{
+				border-top-left-radius:75px;
+				margin-left: 50px ;
+			}
+		}
+
+		.eye{
+			border-radius:200px;
+			border:1px solid black;
+			margin-top:-20px;	
+			$eye-margin:150px;
+			&.white{
+				background-color:white;
+				width:50px;
+				height:50px;
+			}
+
+			&.color{
+				background-color:green;
+				width:30px;
+				height:30px;
+				float:right;
+				margin-top:5px;
+			}
+
+			&.right{
+				margin-right: $eye-margin;
+
+			}
+
+			&.left{
+				margin-left:$eye-margin;
+			}
+			
+		}
+
+
+		.left{
+			float:left;
+		}
+		.right{
+			float:right;
+		}
+
+		$circle-height: 209px;
+		$circle-width:295px;
+		$circle-margin:-51px;
+		$border-radius:50px;
+		.mouth-wrapper{
+			.circle{
+				background-color:white;
+				height:$circle-height;
+				width:$circle-width;
+				@include border-radius(200px);
+
+			
+
+				&.left{
+					z-index:1;
+					margin-left: $circle-margin;
+					@include rotate(-10);	
+					background-color:white;
+
+				}
+				&.right{
+					z-index:2;
+					background-color:white;
+					margin-right: -0.8* $circle-width;
+					margin-top:43px;
+					@include rotate(20);
+				}	
+
+			}
+			.seam{
+
+
+					z-index:2;
+					border: 1px dashed black;
+					height: 0.9 * $circle-height;
+					width: 0.95 * $circle-width;
+					margin-left: 0.025 * $circle-width;
+					margin-top:0.05 * $circle-height;
+					float:left;
+					background-color:white;
+
+				.cover{
+					background-color:white;
+					height:82px;
+					margin-left:83px;
+					margin-top:6px;
+					width:41px;
+					border-radius:0;
+					position:absolute;
+					z-index:3;
+				}
+				&.left{
+					float:left;
+					margin-left:-289px;
+					margin-top:9px;
+					@include rotate(-10);
+				}
+
+				&.right{
+					float:right;
+					margin-right:-234px;
+					margin-top:41px;
+					@include rotate( 20);
+
+				}
+				
+			}
+
+
+			.mouth-area{
+				border-radius:250px;
+				height:200px;
+				margin-top:150px;
+
+				.mouth-parts{
+					margin:2%;
+					float:left;
+					z-index: 9;
+					height: 147.6px;
+					width: 427.5px;
+					margin-left: 0;
+					margin-top: -202.8px;
+					position:relative;
+
+					float: left;
+					
+					@include border-radius(200px);
+				}
+				.nose{
+					background-color:black;
+					margin-left:auto;
+					margin-right:auto;
+					margin-top:-15px;
+					height:40px;
+					width:80px;
+					border-radius: 50px 50px 20px 20px;
+
+					&:before, &:after{
+						height:20px;
+						width:20px;
+						background-color:white;
+						display:inline-block;
+						content:"";
+						border-radius:5px;
+						margin-top:30px;
+
+					}
+
+					&:before{
+						float:left;
+						margin-left:-5px;
+					}
+
+					&:after{
+						float:right;
+						margin-right:-5px;
+					}
+				}
+
+				.cheek, .cheek:after, .cheek:before{
+					height:10px;
+					background-color:black;
+					width:10px;
+					border-radius:20px;
+					$cheek-margin:50px;
+					padding:10px;
+					&.right{
+						float:right;
+						margin-right:$cheek-margin;
+					}
+
+					&.left{
+						float:left;
+						margin-left:$cheek-margin;
+					}
+				}
+
+				.cheek:after{
+					
+					margin-top:-40px;
+					margin-right:-40px;
+					display:block;
+					float:right;
+					background-color:black;
+
+				}
+
+				.cheek:before{
+					margin-top:40px;
+					margin-left:-20px;
+					display:block;
+					background-color:black;
+				}
+
+				$mouth-height: 50px;
+				$mouth-width:150px;
+				.mouth{
+					height:$mouth-height;
+					width:$mouth-width;
+					border-radius:600px;
+					background-color:black;
+					margin:10px auto auto auto;
+					padding-bottom:70px;
+				}
+
+				.mouth:before{
+					height:$mouth-height;
+					width:$mouth-width;
+					background-color:white;
+					display:inline-block;
+				}
+
+				.mouth:after{
+					width:0.9 * $mouth-width;
+					height:0.9* $mouth-height;
+					margin-left:0.05*$mouth-width;
+					margin-top:-1*$mouth-height;
+					background-color:white;
+					border-radius:200px;
+					display:block;
+					padding-bottom:70px;
+				}
+
+
+			}
+		}
+	}
+}
+
+div.prod, div.prod:before, div.prod:after{ 
+	transition: border-radius 6s;
+	-moz-transition: border-radius 6s; /* Firefox 4 */
+	-webkit-transition: border-radius 6s; /* Safari and Chrome */
+	-o-transition: border-radius 6s; /* Opera */
+
+	transition-delay: 5s;
+	-moz-transition-delay: 5s; /* Firefox 4 */
+	-webkit-transition-delay: 5s; /* Safari and Chrome */
+	-o-transition-delay: 5s; /* Opera */ 
+}

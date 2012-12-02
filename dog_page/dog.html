@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <link href='dog.css' rel='stylesheet' type='text/css'>
+      <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+      <title>Dog Made By Divs And CSS</title>
+    </link>
+  </head>
+  <body>
+    <div class='dog-by-divs-container'>
+      <div class='seam'>
+        <div class='ear right'></div>
+        <div class='ear left'></div>
+        <div class='eye white left'>
+          <div class='eye color'></div>
+        </div>
+        <div class='eye white right'>
+          <div class='eye color'></div>
+        </div>
+        <!--
+          mouth wrapper. implemented with 2 small tubes
+        -->
+        <div class='mouth-wrapper'>
+          <div class='circle left'>
+            <div class='circle right'></div>
+          </div>
+          <div class='seam left'>
+            <div class='cover'></div>
+            <div class='seam right'></div>
+          </div>
+          <div class='mouth-area'>
+            <div class='mouth-parts'>
+              <div class='nose'></div>
+              <div class='cheek left'>
+                <!--
+                  <div class="dot one"></div>
+                  <div class="dot two"></div>
+                  <div class="dot three"></div>
+                -->
+              </div>
+              <div class='cheek right'>
+                <!--
+                  <div class="dot one"></div>
+                  <div class="dot two"></div>
+                  <div class="dot three"></div>
+                -->
+              </div>
+              <div class='mouth'></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type='text/javascript'>
+      //<![CDATA[
+        $(function(){ $("body").addClass("loaded")})
+      //]]>
+    </script>
+  </body>
+</html>

@@ -1,0 +1,230 @@
+*:before, *:after {
+  content: ""; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+body.loaded {
+  background-color: #CECECE; }
+  body.loaded .seam {
+    border: 1px dashed black;
+    width: 95%;
+    height: 90%;
+    border-radius: 250px;
+    margin: auto;
+    margin-top: 10px;
+    position: static; }
+  body.loaded .dog-by-divs-container {
+    border: 2px solid black;
+    margin: auto;
+    border-radius: 150px;
+    height: 300px;
+    width: 450px;
+    background-color: #565656; }
+    body.loaded .dog-by-divs-container .ear {
+      background-color: black;
+      height: 100px;
+      width: 100px;
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+      margin-top: -15px; }
+      body.loaded .dog-by-divs-container .ear.right {
+        border-top-right-radius: 75px;
+        margin-right: 50px; }
+      body.loaded .dog-by-divs-container .ear.left {
+        border-top-left-radius: 75px;
+        margin-left: 50px; }
+    body.loaded .dog-by-divs-container .eye {
+      border-radius: 200px;
+      border: 1px solid black;
+      margin-top: -20px; }
+      body.loaded .dog-by-divs-container .eye.white {
+        background-color: white;
+        width: 50px;
+        height: 50px; }
+      body.loaded .dog-by-divs-container .eye.color {
+        background-color: green;
+        width: 30px;
+        height: 30px;
+        float: right;
+        margin-top: 5px; }
+      body.loaded .dog-by-divs-container .eye.right {
+        margin-right: 150px; }
+      body.loaded .dog-by-divs-container .eye.left {
+        margin-left: 150px; }
+    body.loaded .dog-by-divs-container .left {
+      float: left; }
+    body.loaded .dog-by-divs-container .right {
+      float: right; }
+    body.loaded .dog-by-divs-container .mouth-wrapper .circle {
+      background-color: white;
+      height: 209px;
+      width: 295px;
+      -moz-border-radius: 200px;
+      -webkit-border-radius: 200px;
+      border-radius: 200px;
+      -moz-background-clip: padding;
+      -webkit-background-clip: padding-box;
+      background-clip: padding-box; }
+      body.loaded .dog-by-divs-container .mouth-wrapper .circle.left {
+        z-index: 1;
+        margin-left: -51px;
+        -moz-transform: rotate(-10deg);
+        -o-transform: rotate(-10deg);
+        -ms-transform: rotate(-10deg);
+        -webkit-transform: rotate(-10deg);
+        transform: rotate(-10deg);
+        background-color: white; }
+      body.loaded .dog-by-divs-container .mouth-wrapper .circle.right {
+        z-index: 2;
+        background-color: white;
+        margin-right: -236px;
+        margin-top: 43px;
+        -moz-transform: rotate(20deg);
+        -o-transform: rotate(20deg);
+        -ms-transform: rotate(20deg);
+        -webkit-transform: rotate(20deg);
+        transform: rotate(20deg); }
+    body.loaded .dog-by-divs-container .mouth-wrapper .seam {
+      z-index: 2;
+      border: 1px dashed black;
+      height: 188.1px;
+      width: 280.25px;
+      margin-left: 7.375px;
+      margin-top: 10.45px;
+      float: left;
+      background-color: white; }
+      body.loaded .dog-by-divs-container .mouth-wrapper .seam .cover {
+        background-color: white;
+        height: 82px;
+        margin-left: 83px;
+        margin-top: 6px;
+        width: 41px;
+        border-radius: 0;
+        position: absolute;
+        z-index: 3; }
+      body.loaded .dog-by-divs-container .mouth-wrapper .seam.left {
+        float: left;
+        margin-left: -289px;
+        margin-top: 9px;
+        -moz-transform: rotate(-10deg);
+        -o-transform: rotate(-10deg);
+        -ms-transform: rotate(-10deg);
+        -webkit-transform: rotate(-10deg);
+        transform: rotate(-10deg); }
+      body.loaded .dog-by-divs-container .mouth-wrapper .seam.right {
+        float: right;
+        margin-right: -234px;
+        margin-top: 41px;
+        -moz-transform: rotate(20deg);
+        -o-transform: rotate(20deg);
+        -ms-transform: rotate(20deg);
+        -webkit-transform: rotate(20deg);
+        transform: rotate(20deg); }
+    body.loaded .dog-by-divs-container .mouth-wrapper .mouth-area {
+      border-radius: 250px;
+      height: 200px;
+      margin-top: 150px; }
+      body.loaded .dog-by-divs-container .mouth-wrapper .mouth-area .mouth-parts {
+        margin: 2%;
+        float: left;
+        z-index: 9;
+        height: 147.6px;
+        width: 427.5px;
+        margin-left: 0;
+        margin-top: -202.8px;
+        position: relative;
+        float: left;
+        -moz-border-radius: 200px;
+        -webkit-border-radius: 200px;
+        border-radius: 200px;
+        -moz-background-clip: padding;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box; }
+      body.loaded .dog-by-divs-container .mouth-wrapper .mouth-area .nose {
+        background-color: black;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -15px;
+        height: 40px;
+        width: 80px;
+        border-radius: 50px 50px 20px 20px; }
+        body.loaded .dog-by-divs-container .mouth-wrapper .mouth-area .nose:before, body.loaded .dog-by-divs-container .mouth-wrapper .mouth-area .nose:after {
+          height: 20px;
+          width: 20px;
+          background-color: white;
+          display: inline-block;
+          content: "";
+          border-radius: 5px;
+          margin-top: 30px; }
+        body.loaded .dog-by-divs-container .mouth-wrapper .mouth-area .nose:before {
+          float: left;
+          margin-left: -5px; }
+        body.loaded .dog-by-divs-container .mouth-wrapper .mouth-area .nose:after {
+          float: right;
+          margin-right: -5px; }
+      body.loaded .dog-by-divs-container .mouth-wrapper .mouth-area .cheek, body.loaded .dog-by-divs-container .mouth-wrapper .mouth-area .cheek:after, body.loaded .dog-by-divs-container .mouth-wrapper .mouth-area .cheek:before {
+        height: 10px;
+        background-color: black;
+        width: 10px;
+        border-radius: 20px;
+        padding: 10px; }
+        body.loaded .dog-by-divs-container .mouth-wrapper .mouth-area .cheek.right, body.loaded .dog-by-divs-container .mouth-wrapper .mouth-area .cheek:after.right, body.loaded .dog-by-divs-container .mouth-wrapper .mouth-area .cheek:before.right {
+          float: right;
+          margin-right: 50px; }
+        body.loaded .dog-by-divs-container .mouth-wrapper .mouth-area .cheek.left, body.loaded .dog-by-divs-container .mouth-wrapper .mouth-area .cheek:after.left, body.loaded .dog-by-divs-container .mouth-wrapper .mouth-area .cheek:before.left {
+          float: left;
+          margin-left: 50px; }
+      body.loaded .dog-by-divs-container .mouth-wrapper .mouth-area .cheek:after {
+        margin-top: -40px;
+        margin-right: -40px;
+        display: block;
+        float: right;
+        background-color: black; }
+      body.loaded .dog-by-divs-container .mouth-wrapper .mouth-area .cheek:before {
+        margin-top: 40px;
+        margin-left: -20px;
+        display: block;
+        background-color: black; }
+      body.loaded .dog-by-divs-container .mouth-wrapper .mouth-area .mouth {
+        height: 50px;
+        width: 150px;
+        border-radius: 600px;
+        background-color: black;
+        margin: 10px auto auto auto;
+        padding-bottom: 70px; }
+      body.loaded .dog-by-divs-container .mouth-wrapper .mouth-area .mouth:before {
+        height: 50px;
+        width: 150px;
+        background-color: white;
+        display: inline-block; }
+      body.loaded .dog-by-divs-container .mouth-wrapper .mouth-area .mouth:after {
+        width: 135px;
+        height: 45px;
+        margin-left: 7.5px;
+        margin-top: -50px;
+        background-color: white;
+        border-radius: 200px;
+        display: block;
+        padding-bottom: 70px; }
+
+div.prod, div.prod:before, div.prod:after {
+  transition: border-radius 6s;
+  -moz-transition: border-radius 6s;
+  /* Firefox 4 */
+  -webkit-transition: border-radius 6s;
+  /* Safari and Chrome */
+  -o-transition: border-radius 6s;
+  /* Opera */
+  transition-delay: 5s;
+  -moz-transition-delay: 5s;
+  /* Firefox 4 */
+  -webkit-transition-delay: 5s;
+  /* Safari and Chrome */
+  -o-transition-delay: 5s;
+  /* Opera */ }

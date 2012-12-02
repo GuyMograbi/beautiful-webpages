@@ -1,0 +1,39 @@
+%html
+  %head
+    %link{:href => "dog.css", :rel => "stylesheet", :type => "text/css"}
+      %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"}
+      %title Dog Made By Divs And CSS
+  %body
+    .dog-by-divs-container
+      .seam
+        .ear.right
+        .ear.left
+        .eye.white.left
+          .eye.color
+        .eye.white.right
+          .eye.color
+
+        / 
+          mouth wrapper. implemented with 2 small tubes
+        .mouth-wrapper
+          .circle.left 
+            .circle.right
+          .seam.left  
+            .cover
+            .seam.right
+          .mouth-area
+            .mouth-parts
+              .nose
+              .cheek.left
+                /
+                  <div class="dot one"></div>
+                  <div class="dot two"></div>
+                  <div class="dot three"></div>
+              .cheek.right
+                /
+                  <div class="dot one"></div>
+                  <div class="dot two"></div>
+                  <div class="dot three"></div>
+              .mouth
+    :javascript
+      $(function(){ $("body").addClass("loaded")})
